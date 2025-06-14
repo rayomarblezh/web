@@ -1,23 +1,26 @@
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilos globales */
 body {
   font-family: 'Inter', sans-serif;
   background-color: #fdfdfd;
   color: #111;
-  font-weight: normal;
   line-height: 1.6;
 }
 
+/* Contenedor principal */
 .container {
   max-width: 900px;
-  margin: auto;
+  margin: 0 auto;
   padding: 2rem;
 }
 
+/* Hero (encabezado principal) */
 .hero {
   background: #000;
   color: #fff;
@@ -32,10 +35,11 @@ body {
 .hero p {
   font-size: 1.2rem;
   margin-top: 0.5rem;
+  opacity: 0.9;
 }
 
 .hero nav {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .hero nav a {
@@ -43,8 +47,14 @@ body {
   color: #ff1e1e;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
+.hero nav a:hover {
+  color: #ffffff;
+}
+
+/* Secciones */
 .section {
   margin: 4rem 0;
 }
@@ -54,20 +64,30 @@ h2 {
   margin-bottom: 1rem;
   border-bottom: 2px solid #ff1e1e;
   padding-bottom: 0.5rem;
+  color: #222;
 }
 
+/* Tarjetas de habilidades */
 .card {
   background: #f0f0f0;
   padding: 1.5rem;
   margin: 1rem 0;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .card h3 {
   margin-bottom: 0.5rem;
+  color: #ff1e1e;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -76,11 +96,17 @@ footer {
   font-size: 0.9rem;
 }
 
+/* Enlaces */
 a {
   color: #ff1e1e;
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+/* Botón subir arriba */
 #topBtn {
   position: fixed;
   bottom: 20px;
@@ -88,12 +114,19 @@ a {
   background: #ff1e1e;
   color: white;
   border: none;
-  padding: 0.7rem 1rem;
+  padding: 0.7rem;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  z-index: 1000;
 }
 
+#topBtn:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 2rem;
@@ -105,7 +138,7 @@ a {
   }
 
   #topBtn {
-    padding: 0.5rem 0.8rem;
+    padding: 0.5rem;
     font-size: 1rem;
   }
 }
